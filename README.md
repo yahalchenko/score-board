@@ -25,8 +25,8 @@ b. Away team
 
 ## Usage
 The main business and DB logic is represented by `GameRepository.class` and `GameService.class` classes.
-Use `GameRepository.save(Game game)` to create Game in DB
-Use `GameRepository.update(Game game)` to update Game in DB
-Use `GameRepository.deleteById(String id)` to delete Game in DB
-Use `GameService.findAllSortedByTotalScoreAndMostRecentStartTime()` to find all games (represented by Game type) in progress ordered by their total score. The games with the same total score will be returned ordered by the most recently started match in the scoreboard.
-Use `GameService.findAllGameSummariesSortedByTotalScoreAndMostRecentStartTime()` to find all game summaries (represented by String type) in progress ordered by their total score. The games with the same total score will be returned ordered by the most recently started match in the scoreboard.
+<br/> Use `GameRepository.save(Game game)` to create Game in DB
+<br/> Use `GameRepository.update(Game game)` to update Game in DB
+<br/> Use `GameRepository.deleteById(String id)` to delete Game in DB
+<br/> Use `GameService.findAllSortedByTotalScoreAndMostRecentStartTime()` to find all games (represented by Game type) in progress ordered by their total score. The games with the same total score will be returned ordered by the most recently started match in the scoreboard.
+<br/> Use `GameService.findAllGameSummariesSortedByTotalScoreAndMostRecentStartTime()` to find all game summaries (represented by String type) in progress ordered by their total score. The games with the same total score will be returned ordered by the most recently started match in the scoreboard.
