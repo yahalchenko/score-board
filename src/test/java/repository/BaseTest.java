@@ -11,7 +11,7 @@ import java.util.stream.Collectors;
 public class BaseTest {
     private static final EasyRandom EASY_RANDOM = new EasyRandom(new EasyRandomParameters()
             .excludeField(FieldPredicates.inClass(File.class)));
-    private static final int DEFAULT_RANDOM_LIST_SIZE = 5;
+    private static final int DEFAULT_RANDOM_LIST_SIZE = 3;
 
     protected static <T> T random(Class<T> type) {
         return EASY_RANDOM.nextObject(type);

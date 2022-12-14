@@ -9,7 +9,6 @@ import org.junit.jupiter.api.Test;
 
 import java.sql.Timestamp;
 import java.time.LocalDateTime;
-import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
@@ -24,21 +23,22 @@ class GameRepositoryTest extends BaseTest{
 
     @Test
     void testSave() {
-        Game mockedGame = random(Game.class);
-        gameRepository.save(mockedGame);
-        Assertions.assertEquals(mockedGame, mockDb.get(mockedGame.getId()));
+        var savedGame = gameRepository.save(random(Game.class));
+
+        Assertions.assertEquals(savedGame, mockDb.get(savedGame.getId()));
     }
 
     @Test
     void testUpdate() {
-        Game mockedGame = random(Game.class);
-        gameRepository.update(mockedGame);
-        Assertions.assertEquals(mockedGame, mockDb.get(mockedGame.getId()));
+        var savedGame = gameRepository.save(random(Game.class));
+        savedGame.setName("Ukraine - England");
+        gameRepository.update(savedGame);
+        Assertions.assertEquals(savedGame, mockDb.get(savedGame.getId()));
     }
 
     @Test
     void testGetAll() {
-        List<Game> games = randomList(Game.class);
+        var games = randomList(Game.class);
         var firstGame = games.get(0);
         firstGame.setId("1");
         firstGame.setName("Spain - Japan");
@@ -70,9 +70,9 @@ class GameRepositoryTest extends BaseTest{
 
     @Test
     void testDeleteById() {
-        var mockedGame = gameRepository.save(random(Game.class));
-        gameRepository.deleteById(mockedGame.getId());
-        Assertions.assertEquals(mockedGame, gameRepository.getById(mockedGame.getId()));
+        var savedGame = gameRepository.save(random(Game.class));
+        gameRepository.deleteById(savedGame.getId());
+        Assertions.assertEquals(0, mockDb.size());
     }
 
     @AfterEach
