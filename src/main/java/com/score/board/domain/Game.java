@@ -22,7 +22,7 @@ public class Game {
 
     @Override
     public String toString() {
-        return String.join(" - ", Optional.ofNullable(homeTeam).map(it -> homeTeam.getName()).orElse(null),
-                Optional.ofNullable(homeTeam).map(it -> awayTeam.getName()).orElse(null));
+        return String.join(" - ", Optional.ofNullable(homeTeam).map(it -> homeTeam.getName().concat(" " + homeTeam.getScore())).orElse(null),
+                Optional.ofNullable(homeTeam).map(it -> awayTeam.getName() + " " + awayTeam.getScore()).orElse(null));
     }
 }

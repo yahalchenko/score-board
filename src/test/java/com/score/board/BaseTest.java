@@ -1,4 +1,4 @@
-package repository;
+package com.score.board;
 
 import org.jeasy.random.EasyRandom;
 import org.jeasy.random.EasyRandomParameters;

@@ -29,8 +29,7 @@ public class GameRepository implements Repository<String, Game> {
     }
 
     public List<Game> getAll() {
-        return db.values().stream().sorted(Comparator.comparing(Game::getTotalScore)
-                .thenComparing(it -> it.getStartTime().getTime()).reversed()).collect(Collectors.toList());
+        return db.values().stream().toList();
     }
 
     @Override

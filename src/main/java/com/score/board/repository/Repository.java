@@ -1,5 +1,6 @@
 package com.score.board.repository;
 
+import java.util.List;
 import java.util.Optional;
 
 public interface Repository<ID, T> {
@@ -9,7 +10,7 @@ public interface Repository<ID, T> {
 
     Optional<T> getById(ID id);
 
-    Iterable<T> getAll();
+    List<T> getAll();
 
     void deleteById(ID id);
 }
